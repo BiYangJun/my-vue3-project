@@ -4,15 +4,20 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "server": "server/index.js",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "element-plus": "^2.1.9",
+    "fs-extra": "^10.0.1",
+    "multiparty": "^4.2.3",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.0",
-    "vite": "^2.8.0"
+    "vite": "^2.8.0",
+    "vue-cli-plugin-element-plus": "^0.0.13"
   }
 }

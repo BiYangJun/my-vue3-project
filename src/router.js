@@ -9,12 +9,17 @@ const routes =  [
   {
     path: "/bigDataBase",
     name: "bigDataBase",
-    component: () => import("./pages/BigDataListBase.vue")
+    component: () => import("./pages/BigDataList/BigDataListBase.vue")
   },
   {
     path: "/bigDataPro",
     name: "bigDataPro",
-    component: () => import("./pages/BigDataListPro.vue")
+    component: () => import("./pages/BigDataList/BigDataListPro.vue")
+  },
+  {
+    path: "/uploadFile",
+    name: "uploadFile",
+    component: () => import("./pages/UploadFile/UploadFile.vue")
   }
 ];
 
