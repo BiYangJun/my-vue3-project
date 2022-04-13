@@ -66,7 +66,7 @@ export default {
     });
     let table = reactive({data: []});
     // 切片大小
-    const SIZE = readonly(10 * 1024 * 1024);
+    const SIZE = readonly(0.5 * 1024 * 1024);
     let hashPercentage = ref(0);
     // 上传请求存放列表
     let requestList = reactive([]);
@@ -206,8 +206,17 @@ export default {
         }
       })
     }
-    function handleResume() {}
-    function handlePause() {}
+    // 恢复
+    async function handleResume() {
+      status.value = Status.uploading;
+      const { uploadedList } = await verifyUpload(container.file.name, container.hash);
+      uploadChunks(uploadedList)
+    }
+    // 暂停
+    function handlePause() {
+      status.value = Status.pause;
+      resetData();
+    }
     function transformByte(val) {
       return val ? Number((val / 1024).toFixed(0)) : '';
     }
